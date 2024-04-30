@@ -1,0 +1,31 @@
+
+section.team {
+  height: 40vh;
+  width: 100%;
+  position: relative;
+}
+
+section.team > .container {
+  position: relative;
+  padding: 2.5% 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  height: calc(100% - 92px);
+}
+
+section.team .text {
+  width: 50%;
+  font-weight: 500;
+  font-size: 1.8vh;
+  text-indent: 40px;
+  text-align: justify;
+}
+
+section.team .image {
+  width: 290px;
+  height: 298px;
+  position: absolute;
+  top: -17.5%;
+  left: 65%;
+}

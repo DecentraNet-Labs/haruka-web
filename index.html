@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Haruka Nodes &nbsp;|&nbsp; Staking+</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="community.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var container = $('section.proj > .container')
+        $('.next.right').on('click', function() {
+          $('.next.left').show();
+          container.animate({
+            scrollLeft: '+=375' // Scrolls 100 pixels to the right
+          }, 500, function() {
+            // Check if the scrollable container is fully scrolled to the right
+            var scrollWidth = container.get(0).scrollWidth;
+            var scrollLeft = container.scrollLeft();
+            var containerWidth = container.width();
+            console.log(container.get(0))
+            console.log(scrollLeft + containerWidth, scrollWidth)
+            if(scrollLeft + containerWidth + 10 >= scrollWidth) {
+              $('.next.right').hide();
+            }
+          }); // Adjust the duration as needed
+        });
+        $('.next.left').on('click', function() {
+          $('.next.right').show();
+          container.animate({
+            scrollLeft: '-=375' // Scrolls 100 pixels to the right
+          }, 500, function() {
+            var scrollLeft = container.scrollLeft();
+            if(scrollLeft <= 0) {
+              $('.next.left').hide();
+            }
+          }); // Adjust the duration as needed
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <div class="inner">
+        <div class="element" data-nav="contact">CONTACT</div>
+        <div class="element" data-nav="about">ABOUT US</div>
+        <img class="logo" src="logo.png" />
+        <div class="element" data-nav="benefits">BENEFITS</div>
+        <div class="element"><span class="dead">DASHBOARD</span></div>
+      </div>
+    </header>
+    <main>
+      <section class="section face">
+        <div class="container">
+          <div class="title">
+            Haruka Nodes
+          </div>
+          <div class="subtitle">
+            Unleashing Potential <br /> with Every Token
+          </div>
+        </div>
+      </section>
+      <section id="about" class="team">
+        <div class="title">
+          About Us
+        </div>
+        <div class="container">
+          <div class="text">
+            At Haruka Nodes, we are pioneering the future of Web3.0 technology with our cutting-edge PoS staking services. 
+            Founded with the vision of empowering token holders, we offer more than just staking — we provide a gateway to maximizing your tokens’ potential.
+            <br />
+            <br />
+            Our platform is designed to offer additional benefits or services that go beyond the basics of staking.
+            Every token staked with us opens up opportunities for more rewards and benefits, ensuring our users are part of blockchain’s innovative future. 
+            Join us at Haruka Nodes, where every token is a step towards a more connected and effective blockchain ecosystem.
+          </div>
+          <img class="image" src="icon.png" />
+        </div>
+      </section>
+
+      <section id="benefits" class="proj">
+        <div class="title">
+          Benefits & Services
+        </div>
+        <div class="container">
+          <div class="project">
+            <div class="image na">
+              <img src="proj_jsuite.png" />
+            </div>
+            <div class="title">J Suite</div>
+            <div class="description">
+              J-Suite offers a seamless experience on Jackal Protocol. It features a robust file explorer, storage management, and advanced sharing capabilities.
+              <br /><br />
+              J-Suite is a subscription-based service. Stakers with Haruka will be granted a complimentary subscription.
+            </div>
+          </div>
+          <div class="project">
+            <div class="image">
+              <img src="proj_oculux.png" />
+            </div>
+            <div class="title">Oculux</div>
+            <div class="description">Oculux facilites the management, distribution, and playback of decentralized video on Jackal Protocol. It 
+              offers various tiers of file security, handles relevant extended metadata, and unique playback features.
+              <br /><br />
+              <b>Beta Access for all stakers in Jackal v4!</b>
+            </div>
+          </div>
+          <div class="project">
+            <div class="image na">
+              <img src="proj_haruka.png" />
+            </div>
+            <div class="title">Haruka Dash</div>
+            <div class="description"> Coming In 2025...
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="community">
+        <div class="title">
+          Join Our Community!
+        </div>
+        <div class="container">
+          <div class="item">
+            <img class="icon" src="discord.png" />
+            <div class="text">
+              Discord
+            </div>
+          </div>
+          <div class="item">
+            <img class="icon" src="telegram.webp" />
+            <div class="text">
+              Telegram
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="foot">
+        <div class="container">
+          Hakura Nodes 2024 © <br />
+          Powered by DecentraNet Labs
+        </div>
+      </section>
+    </main>
+    <script>
+      $(document).ready(function() {
+        $(".element").click(function() {
+          var target = '#' + $(this).data('nav');
+          $('html, body').animate({
+            scrollTop: $(target).offset().top - 150
+          }, 500); // Adjust the duration as needed
+        });
+
+      });
+    </script>
+  </body>
+</html>
